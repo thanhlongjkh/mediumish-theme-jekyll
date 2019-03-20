@@ -1,62 +1,138 @@
-# Site
-name: "Mediumish"
-title: "Mediumish"
-description: "Jekyll Template for Blogging"
-meta_description: "Jekyll template, Medium styled, free for bloggers."
-logo: 'assets/images/logo.png'
-favicon: 'assets/images/logo.png'
-baseurl: /mediumish-theme-jekyll
-google_analytics: 'UA-46278016-1'
-disqus: 'demowebsite'
-mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
-include: ["_pages"]
-permalink: /:title/
-
-# Authors
-authors:
-  sal:
-    name: Sal
-    display_name: Sal
-    gravatar: e56154546cf4be74e393c62d1ae9f9d4
-    email: wowthemesnet@gmail.com
-    web: https://www.wowthemes.net
-    twitter: https://twitter.com/wowthemesnet
-    description: "Author of Mediumish, a Bootstrap Medium styled template available for WordPress, HTML, Ghost and Jekyll. You are currently previewing Jekyll template demo."
-  john:
-    name: John
-    display_name: John
-    gravatar: b1cc14991db7a456fcd761680bbc8f81
-    email: wowthemesnet@gmail.com
-    web: https://www.wowthemes.net
-    twitter: https://twitter.com/wowthemesnet
-    description: "This is the author box. Write a short description of the author here. You are currently previewing Mediumish demo, a Jekyll template compatible with Github pages."
-
-# Plugins
-plugins: 
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-feed
-  - jekyll-seo-tag
-  - jekyll-archives
-    
-# Archives
-jekyll-archives:
-  enabled:
-    - categories
-  layout: archive
-  permalinks:
-    category: '/category/:name/'
-    
-# Pagination 
-paginate: 6
-paginate_path: /page:num/
-    
-# Other
+---
+title: My website
+timezone: Pacific/Pago_Pago
+collections:
+  posts:
+    title: Posts
+    output: true
+  uploads:
+    title: Uploads
+    output: true
+  hjk:
+    title: hjk
+    output: true
+defaults:
+- scope:
+    path: ''
+    type: posts
+  values:
+    layout: post
+    comments: true
+    social-share: true
+- scope:
+    path: ''
+  values:
+    layout: page
+    show-avatar: true
+url: https://username.github.io
+baseurl: 
+description: A virtual proof that name is awesome!
+navbar-links:
+  About Me: aboutme
+  Resources:
+  - Beautiful Jekyll: http://deanattali.com/beautiful-jekyll/
+  - Learn markdown: http://www.markdowntutorial.com/
+  - GitHub Pages: https://pages.github.com/
+  Author's home: http://deanattali.com
+avatar: "/img/avatar-icon.png"
+navbar-col: "#F5F5F5"
+navbar-text-col: "#404040"
+navbar-children-col: "#F5F5F5"
+page-col: "#FFFFFF"
+link-col: "#008AFF"
+hover-col: "#0085A1"
+footer-col: "#F5F5F5"
+footer-text-col: "#777777"
+footer-link-col: "#404040"
+author:
+  name: Some Person
+social-network-links:
+  rss: true
+  email: someone@example.com
+  facebook: daattali
+  github: daattali
+  twitter: daattali
+share-links-active:
+  twitter: true
+  facebook: true
+  google: false
+  linkedin: true
+url-pretty: MyWebsite.com
+staticman:
+  repository: 
+  branch: 
+  endpoint: 
+  reCaptcha:
+    siteKey: 
+    secret: 
+excerpt_length: 50
+title-separator: "-"
 markdown: kramdown
-
+highlighter: rouge
+permalink: "/:year-:month-:day-:title/"
+paginate: 5
 kramdown:
   input: GFM
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    block:
-      line_numbers: true
+link-tags: true
+exclude:
+- CHANGELOG.md
+- CNAME
+- Dockerfile
+- Gemfile
+- Gemfile.lock
+- LICENSE
+- README.md
+- Vagrantfile
+prose:
+  rooturl: _posts
+  media: img
+  ignore:
+  - 404.html
+  - LICENSE
+  - feed.xml
+  - _config.yml
+  - "/_layouts"
+  - "/_includes"
+  - "/css"
+  - "/img"
+  - "/js"
+  metadata:
+    _posts:
+    - name: layout
+      field:
+        element: hidden
+        value: post
+    - name: title
+      field:
+        element: text
+        label: Post title
+        placeholder: Title
+        alterable: true
+    - name: subtitle
+      field:
+        element: textarea
+        label: Subtitle
+        placeholder: A description of your post.
+        alterable: true
+    - name: date
+      field:
+        element: text
+        label: Date
+        help: Enter date of post.
+        placeholder: yyyy-mm-dd
+        alterable: true
+    - name: image
+      field:
+        element: text
+        label: Image
+        help: Add a thumbnail image to your post.
+        placeholder: Thumbnail
+        alterable: true
+    - name: published
+      field:
+        element: checkbox
+        label: Publish
+        help: Check to publish post, uncheck to hide.
+plugins:
+- jekyll-paginate
+- jekyll-sitemap
